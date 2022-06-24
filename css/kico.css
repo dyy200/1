@@ -1,0 +1,235 @@
+﻿/* @charset "UTF-8";
+
+/* 0 - 全局
+-------------------------------- */
+html, body,
+dl, dt, dd, ol, ul,
+h1, h2, h3, h4, h5, h6,
+pre, code, form, p,
+fieldset, legend, figure{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    color: #353535;
+    font: 16px/1.5 'Microsoft Yahei', 'PingFang SC', 'Hiragino Sans GB', sans-serif;
+}
+
+@media screen and (max-width: 500px){
+    html[resize] body{
+        font-size: 14px;
+    }
+}
+
+@media screen and (min-width: 1930px){
+    html[resize] body{
+        font-size: 18px;
+    }
+}
+
+*, *:before, *:after{
+    box-sizing: border-box;
+}
+
+/* - 部分老式浏览器的更正 */
+article, aside,
+header, footer,
+nav, section, main{
+    display: block;
+}
+
+/* - 选择内容 */
+body::-webkit-scrollbar-thumb{
+    box-shadow: inset 1px 1px 0 rgba(0, 0, 0, .1), inset 0 -1px 0 rgba(0, 0, 0, .07);
+}
+
+body::-webkit-scrollbar-track:hover{
+    border-radius: 0;
+    box-shadow: inset 1px 0 0 rgba(0, 0, 0, .1);
+}
+
+.bk-scroll-hover::-webkit-scrollbar{
+    display: none;
+}
+
+.bk-scroll-hover:hover::-webkit-scrollbar{
+    display: inherit;
+}
+
+/* 1 - 容器——边界
+--------------------------------*/
+.wrap{
+    margin-left:auto;
+    margin-right: auto;
+    max-width: 1200px;
+    padding: 0 1.25em;
+    box-sizing: content-box;
+}
+
+.wrap.min{
+    max-width: 800px;
+}
+.wrap.mid{
+    max-width: 1000px;
+}
+.wrap.max{
+    max-width: 1600px;
+}
+
+.wrap.full{
+    max-width: 100%;
+}
+.wrap.thin{
+    padding: 0 .75em;
+}
+.wrap.thick{
+    padding: 0 1.5em;
+}
+.wrap.clear{
+    padding-left: 0;
+    padding-right: 0;
+}
+
+.clearfix:after{
+    content: '';
+    clear: both;
+    display: block;
+}
+
+.overflow{
+    overflow: auto;
+}
+
+/* 2 - 元素——头像
+ -------------------------------- */
+h1{
+    font-size: 2em;
+}
+
+h1, h2, h3, h4, h5, h6{
+    margin-bottom: 1rem;
+}
+
+h1:last-child, h2:last-child, h3:last-child, h4:last-child, h5:last-child, h6:last-child, p:last-child{
+    margin-bottom: 0;
+}
+
+p{
+    line-height: 1.8em;
+    margin-bottom: 1em;
+}
+
+a{
+    color: #3498db;
+    text-decoration: none;
+}
+
+a:hover{
+    color: #ffc670;
+}
+
+abbr[title]{
+    cursor: help;
+    text-decoration: none;
+    border-bottom: 1px dotted;
+}
+
+em, mark, kbd{
+    padding: 0 .5em;
+    border-radius: .5em;
+    display: inline-block;
+}
+
+em{
+    color: #fff;
+    font-style: normal;
+    background: #3498db;
+}
+
+kbd{
+    color: #fff;
+    font-size: 90%;
+    background: #333;
+    font-family: 'Consolas', 'Courier New', monospace, "微软雅黑";
+}
+
+audio{
+    vertical-align: middle;
+}
+
+img, svg, video{
+    height: auto;
+    max-width: 100%;
+    vertical-align: middle;
+} 
+
+
+
+/* - 引用*/
+blockquote{
+    margin: 0 0 1em;
+    font-style: oblique;
+    background: #f5fafd;
+    padding: 1em 1em 1em 2em;
+    border-left: 5px #3498db solid;
+}
+
+cite{
+    color: #3498db;
+    font-style: normal;
+}
+
+
+
+/* -- 网格对齐方式 */
+.row > .left, .row > .right, .row > .top, .row > .bottom, .row > .center{
+    display: flex;
+    flex-direction: column;
+}
+
+.row > .center{
+    align-items: center;
+    justify-content: center;
+}
+
+.row > .center-fixed{
+    text-align: center;
+}
+
+.row > .left{
+    -webkit-box-align: start;
+    align-items: flex-start;
+}
+
+.row > .right{
+    -webkit-box-align: end;
+    align-items: flex-end;
+}
+
+.row > .top{
+    justify-content: flex-start;
+}
+
+.row > .bottom{
+    justify-content: flex-end;
+}
+
+@media screen and (max-width: 900px){
+    .row > .to-center{
+        align-items: center !important;
+    }
+}
+
+/* - 隐藏栅格功能 */
+@media screen and (max-width: 600px){
+    .row > .hide-s{ display: none; }
+}
+
+@media screen and (max-width: 900px){
+    .row > .hide-m{ display: none; }
+}
+
+@media screen and (max-width: 1024px){
+    .row > .hide-l{ display: none; }
+}
